@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_saleabilities",
+  "info": {
+    "singularName": "product-saleability",
+    "pluralName": "product-saleabilities",
+    "displayName": "Product Saleability",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_saleabilities"
+    },
+    "storeId": {
+      "type": "integer"
+    },
+    "from": {
+      "type": "date"
+    },
+    "till": {
+      "type": "date"
+    },
+    "isSaleable": {
+      "type": "boolean"
+    },
+    "isNotSaleable": {
+      "type": "boolean"
+    }
+  }
+}

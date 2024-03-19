@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "postal_codes",
+  "info": {
+    "singularName": "postal-code",
+    "pluralName": "postal-codes",
+    "displayName": "Postal Code",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "postalCode": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "zone": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::zone.zone",
+      "inversedBy": "postal_codes"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_deliverabilities",
+  "info": {
+    "singularName": "product-deliverability",
+    "pluralName": "product-deliverabilities",
+    "displayName": "Product Deliverability",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_deliverabilities"
+    },
+    "storeId": {
+      "type": "integer",
+      "required": true
+    },
+    "shipping_methods": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shipping-method.shipping-method"
+    }
+  }
+}

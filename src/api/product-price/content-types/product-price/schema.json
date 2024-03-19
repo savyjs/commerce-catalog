@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_prices",
+  "info": {
+    "singularName": "product-price",
+    "pluralName": "product-prices",
+    "displayName": "Product Price",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_prices"
+    },
+    "storeId": {
+      "type": "integer"
+    },
+    "minPrice": {
+      "type": "decimal"
+    },
+    "minRegularPrice": {
+      "type": "decimal"
+    },
+    "maxPrice": {
+      "type": "decimal"
+    },
+    "maxRegularPrice": {
+      "type": "decimal"
+    },
+    "isSpecialPrice": {
+      "type": "boolean",
+      "default": false
+    },
+    "from": {
+      "type": "date"
+    },
+    "till": {
+      "type": "date"
+    }
+  }
+}
