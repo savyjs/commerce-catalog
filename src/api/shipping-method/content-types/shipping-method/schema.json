@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipping_methods",
+  "info": {
+    "singularName": "shipping-method",
+    "pluralName": "shipping-methods",
+    "displayName": "Shipping Method",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "zones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::zone.zone"
+    },
+    "weekDay": {
+      "displayName": "week day",
+      "type": "component",
+      "repeatable": true,
+      "component": "timedate-units.week-day"
+    }
+  }
+}

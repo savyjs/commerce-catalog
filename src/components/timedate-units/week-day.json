@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_timedate_units_week_days",
+  "info": {
+    "displayName": "week day"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "integer"
+    }
+  }
+}
