@@ -848,9 +848,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::product-price.product-price'
     >;
-    product_inventory: Attribute.Relation<
+    product_inventories: Attribute.Relation<
       'api::product.product',
-      'manyToOne',
+      'oneToMany',
       'api::product-inventory.product-inventory'
     >;
     product_saleabilities: Attribute.Relation<
@@ -933,13 +933,13 @@ export interface ApiProductInventoryProductInventory
     draftAndPublish: false;
   };
   attributes: {
-    products: Attribute.Relation<
-      'api::product-inventory.product-inventory',
-      'oneToMany',
-      'api::product.product'
-    >;
     storeId: Attribute.Integer;
     qty: Attribute.Integer;
+    product: Attribute.Relation<
+      'api::product-inventory.product-inventory',
+      'manyToOne',
+      'api::product.product'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -976,6 +976,10 @@ export interface ApiProductPriceProductPrice extends Schema.CollectionType {
     >;
     storeId: Attribute.Integer;
     minPrice: Attribute.Decimal;
+    minRegularPrice: Attribute.Decimal;
+    maxPrice: Attribute.Decimal;
+    maxRegularPrice: Attribute.Decimal;
+    isSpecialPrice: Attribute.Boolean & Attribute.DefaultTo<false>;
     from: Attribute.Date;
     till: Attribute.Date;
     createdAt: Attribute.DateTime;

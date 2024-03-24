@@ -11,17 +11,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product",
-      "mappedBy": "product_inventory"
-    },
     "storeId": {
       "type": "integer"
     },
     "qty": {
       "type": "integer"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_inventories"
     }
   }
 }
